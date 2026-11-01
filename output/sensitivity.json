@@ -1,0 +1,86 @@
+{
+  "source": "output\\final\\runs\\03_ambiguous_right_adaptive.json",
+  "baseline_p_left": 0.026418692768045364,
+  "offline_inference_calls": 14,
+  "interpretation": "one-feature replacement with maximum range; local model sensitivity, not causal or safety proof; possibly off-manifold inputs",
+  "sensors": [
+    {
+      "angle_deg": 90,
+      "original_m": 4.0,
+      "replacement_m": 4.0,
+      "delta_p_left": 0.0
+    },
+    {
+      "angle_deg": 75,
+      "original_m": 4.0,
+      "replacement_m": 4.0,
+      "delta_p_left": 0.0
+    },
+    {
+      "angle_deg": 60,
+      "original_m": 4.0,
+      "replacement_m": 4.0,
+      "delta_p_left": 0.0
+    },
+    {
+      "angle_deg": 45,
+      "original_m": 4.0,
+      "replacement_m": 4.0,
+      "delta_p_left": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "original_m": 0.8322486986027443,
+      "replacement_m": 4.0,
+      "delta_p_left": 0.4888467444323948
+    },
+    {
+      "angle_deg": 15,
+      "original_m": 1.242457142456451,
+      "replacement_m": 4.0,
+      "delta_p_left": 0.08640389318283309
+    },
+    {
+      "angle_deg": 0,
+      "original_m": 1.1854695472603016,
+      "replacement_m": 4.0,
+      "delta_p_left": 0.013241380189671602
+    },
+    {
+      "angle_deg": -15,
+      "original_m": 1.242457142456451,
+      "replacement_m": 4.0,
+      "delta_p_left": 0.0131408905745189
+    },
+    {
+      "angle_deg": -30,
+      "original_m": 4.0,
+      "replacement_m": 4.0,
+      "delta_p_left": 0.0
+    },
+    {
+      "angle_deg": -45,
+      "original_m": 4.0,
+      "replacement_m": 4.0,
+      "delta_p_left": 0.0
+    },
+    {
+      "angle_deg": -60,
+      "original_m": 4.0,
+      "replacement_m": 4.0,
+      "delta_p_left": 0.0
+    },
+    {
+      "angle_deg": -75,
+      "original_m": 4.0,
+      "replacement_m": 4.0,
+      "delta_p_left": 0.0
+    },
+    {
+      "angle_deg": -90,
+      "original_m": 4.0,
+      "replacement_m": 4.0,
+      "delta_p_left": 0.0
+    }
+  ]
+}

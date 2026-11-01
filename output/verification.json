@@ -1,0 +1,10 @@
+{
+  "left_right_choice": true,
+  "fixed_wrong_side_fails": true,
+  "coarse_alias_pair": true,
+  "detailed_observation_changes_choice": true,
+  "confident_no_extra_scan": true,
+  "reobserve_stationary": true,
+  "no_ai_on_clear_course": true,
+  "maximum_training_vs_pybullet_range_error_m": 1.0436096431476471e-14
+}

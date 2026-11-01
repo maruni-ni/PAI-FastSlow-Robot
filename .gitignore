@@ -1,0 +1,14 @@
+.venv*/
+.python/
+__pycache__/
+private/
+*.zip
+output/*
+!output/final/
+!output/verification.json
+!output/sensitivity.json
+!output/video_metadata.json
+output/final/*
+!output/final/freeze.json
+!output/final/comparison.json
+!output/final/runs/

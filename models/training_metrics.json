@@ -1,0 +1,19 @@
+{
+  "seed": 42,
+  "scenes": 3000,
+  "samples": 6000,
+  "training_samples": 4500,
+  "validation_samples": 1500,
+  "split": "scene groups including their mirrors, 2250 train / 750 validation",
+  "target": "same dense geometric clearance heuristic for both models",
+  "models": {
+    "coarse": {
+      "teacher_agreement": 0.7573333333333333,
+      "sha256": "0034aa8a42804ead927b307a162ab26480e2429152ae629a656f8b295215c545"
+    },
+    "dense": {
+      "teacher_agreement": 0.978,
+      "sha256": "bd36ca67ff8010ed2aa93f833d9c8f215366c147df96e0f4e200805551928947"
+    }
+  }
+}
