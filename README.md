@@ -104,10 +104,6 @@ FAST → SLOW_DECIDE → [曖昧なら SLOW_REOBSERVE] → SLOW_AVOID → FAST �
 - `output/final/freeze.json`: 評価前に凍結した配置・コード/モデルのハッシュ。
 - `models/*.joblib`, `models/training_metrics.json`: 学習済みモデルと分類評価。
 
-`.gitignore` は必要な最終JSONと再生ログを公開対象に含め、私有情報や仮想環境、動画などの派生ファイルは除きます。GitHub用ZIPの中身を展開して登録してください。大きな提出用ZIPそのものをソースとして登録する必要はありません。
-
-YouTubeタイトルは **`PAI最終課題_nini1723`**。PDFもID入りの指定名です。コード・モデル・最終比較ログをGitHubへ公開しています。YouTubeアップロードとOmniCampus提出はユーザーが担当します。
-
 ## 限界と元の完成版
 
 PyBulletの平面運動学で、位置・姿勢を直接更新します。実機・車輪の動力学・VLA・動的障害物・迷路・電力は未検証。ゴール座標は既知で、通路確認レイはゴールまで届きます。未校正確率の0.80は暫定閾値で、低確率を実際の危険確率とは解釈しません。詳細モデルの判断が誤る場合もあります。
