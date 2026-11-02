@@ -664,5 +664,6 @@
     "coarse": "0034aa8a42804ead927b307a162ab26480e2429152ae629a656f8b295215c545",
     "dense": "bd36ca67ff8010ed2aa93f833d9c8f215366c147df96e0f4e200805551928947"
   },
-  "timing_note": "single measured rollout per method/scene, randomized method order; excludes world/model initialization; not energy or latency guarantee"
+  "timing_note": "single measured rollout per method/scene, randomized method order; excludes world/model initialization; not energy or latency guarantee",
+  "source_commit": "47a727ade1dcba592eda03580d51fb765f9db720"
 }

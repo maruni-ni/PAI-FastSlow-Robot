@@ -1,4 +1,4 @@
-"""Paired, complete comparison with a frozen final-scene manifest."""
+"""同じ配置で回避方式を比較する。"""
 import argparse,hashlib,json,time
 from collections import defaultdict
 import numpy as np
@@ -16,7 +16,7 @@ def evaluate(split='dev'):
     if split=='dev':
         configs=[scenario(name) for name in ['clear','single','double','left_open','right_open','ambiguous_left','ambiguous_right','blocked']]
     else:
-        # Fixed before first evaluation. Every scene and every failure is kept.
+        # 比較用の配置は固定する。
         configs=[scenario(name,90000+i) for i in range(6) for name in ['left_open','right_open','ambiguous_left','ambiguous_right']]
     freeze={'split':split,'confidence_threshold':CONFIDENCE_THRESHOLD,'configs':configs,
             'source_hashes':{name:digest(ROOT/name) for name in ['main.py','sim_world.py','robot_controller.py','sensor_config.py','ai_model.py','train_model.py','evaluate.py']},

@@ -1,16 +1,13 @@
 {
-  "file": "PAI_FastSlow_v2_Demo.mp4",
-  "duration_s": 82.0,
-  "frames": 1230,
+  "video": "PAI_FastSlow_Demo.mp4",
   "fps": 15,
-  "resolution": [
-    1280,
-    720
-  ],
+  "frames": 1245,
+  "duration_s": 83.0,
   "sources": [
-    "final/runs/00_left_open_adaptive.json",
-    "final/runs/01_right_open_adaptive.json",
-    "final/runs/03_ambiguous_right_adaptive.json"
+    "00_left_open_adaptive",
+    "01_right_open_adaptive",
+    "03_ambiguous_right_adaptive"
   ],
-  "playback": "1x replay with two explicitly labelled 2-second event holds and explanatory cards; silent Japanese captions"
+  "data_changed": false,
+  "playback": "1x, two labelled 2-second holds, silent captions"
 }

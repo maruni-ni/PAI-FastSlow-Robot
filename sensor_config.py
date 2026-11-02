@@ -1,4 +1,4 @@
-"""Single source of truth shared by training, inference, simulation and HUD."""
+"""学習と走行で使うセンサ設定。"""
 import math
 import numpy as np
 
@@ -38,7 +38,7 @@ def analytic_ranges(boxes,pose,angles):
 
 
 def teacher(dense,error):
-    # Geometric imitation target, not a learned success/optimality label.
+    # 左右の距離から教師ラベルを作る。
     left=np.array([dense[i] for i,a in enumerate(DENSE_DEG) if 15<=a<=75])
     right=np.array([dense[i] for i,a in enumerate(DENSE_DEG) if -75<=a<=-15])
     score=.65*(np.min(left)-np.min(right))+.30*(np.mean(left)-np.mean(right))+.10*error

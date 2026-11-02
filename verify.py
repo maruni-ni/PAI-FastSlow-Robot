@@ -1,4 +1,4 @@
-"""Behavior checks on development cases before freezing the final benchmark."""
+"""開発用配置で動作を確認する。"""
 import json
 import numpy as np
 from main import ROOT,scenario
@@ -25,7 +25,7 @@ def verify():
     assert b_infers[0]['direction']!=b_infers[1]['direction']
     assert any(f['mode']=='SLOW_REOBSERVE' and f['v']==0 and f['w']==0 for f in b['frames'])
     assert not read('clear')['events'] and read('clear')['summary']['inference_calls']==0
-    # Compare actual PyBullet sensor contract to synthetic training geometry.
+    # 学習用の計算とPyBulletの距離計測を照合する。
     largest_error=0.
     for name in ['single','left_open','right_open','ambiguous_left','ambiguous_right']:
         config=scenario(name);world=World(config)

@@ -1,4 +1,4 @@
-"""PyBullet distance sensing/collision queries; planar kinematic robot motion."""
+"""距離計測、接触判定、平面上の移動。"""
 from pathlib import Path
 import argparse
 import json
@@ -56,7 +56,7 @@ class World:
         p.configureDebugVisualizer(p.COV_ENABLE_GUI,0)
         body(p.GEOM_BOX,[5,0,-.09],[.12,.17,.23,1],halfExtents=[6.5,4,.08])
         self.obstacles = [body(p.GEOM_BOX,[cx,cy,.5],[.95,.39,.19,1],halfExtents=[hx,hy,.5]) for cx,cy,hx,hy in config['boxes']]
-        # Cylinder is the conservative circular collision footprint.
+        # 接触判定には機体を囲む円柱を使う。
         self.robot = body(p.GEOM_CYLINDER,[0,0,.22],[.1,.72,.9,1],radius=RADIUS,height=.34)
         self.nose = p.createMultiBody(baseMass=0,baseVisualShapeIndex=p.createVisualShape(p.GEOM_BOX,halfExtents=[.12,.1,.07],rgbaColor=[1,1,1,1]))
         self.wheels=[]
@@ -98,7 +98,7 @@ class World:
         delta=goal-np.array([x,y]); length=np.linalg.norm(delta)
         direction=delta/max(length,1e-9); normal=np.array([-direction[1],direction[0]])
         starts=[]; ends=[]
-        # Three parallel, footprint-expanded goal rays, not a global planner.
+        # 機体幅を考慮した3本のレイでゴールへの通路を確認する。
         for offset in [-.46,0,.46]:
             start=np.array([x,y])+normal*offset+direction*.44
             starts.append([*start,.23]); ends.append([*(goal+normal*offset),.23])
@@ -108,7 +108,7 @@ class World:
         return min([point[8] for obstacle in self.obstacles for point in p.getClosestPoints(self.robot,obstacle,10)] or [10.0])
 
     def advance(self,v,w):
-        # Four substeps bound translation to 7.5 mm at the maximum speed.
+        # 移動を4分割して接触を確認する。
         minimum=10.0
         for _ in range(4):
             x,y,yaw=self.pose

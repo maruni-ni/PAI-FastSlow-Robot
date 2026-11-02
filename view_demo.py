@@ -1,4 +1,4 @@
-"""Replay saved benchmark observations, with an explanatory reobserve hold."""
+"""保存した走行ログを再生する。"""
 import json,time
 import pybullet as p
 from main import ROOT
@@ -11,7 +11,7 @@ try:
         for row in record['frames']:
             if not p.isConnected():break
             world.place(row['pose'])
-            text=p.addUserDebugText(f"V2 LOG REPLAY | {row['mode']} | AI {row['calls']} | dense {row['dense_scans']}",[0,2.5,0],
+            text=p.addUserDebugText(f"Replay | {row['mode']} | calls {row['calls']} | scans {row['dense_scans']}",[0,2.5,0],
                 textColorRGB=[1,1,1],textSize=1.3,replaceItemUniqueId=text)
             if ord('q') in p.getKeyboardEvents():raise KeyboardInterrupt
             time.sleep(2 if row['mode']=='SLOW_REOBSERVE' or row['dense_sensors'] is not None else 1/30)

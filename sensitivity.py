@@ -1,4 +1,4 @@
-"""Offline input replacement sensitivity, excluded from control cost counts."""
+"""センサ値を1本ずつ置き換え、出力の変化を調べる。"""
 import json
 import numpy as np
 from main import ROOT
@@ -10,7 +10,7 @@ def analyze():
     source=ROOT/'output'/'final'/'runs'/'03_ambiguous_right_adaptive.json'
     record=json.loads(source.read_text(encoding='utf-8'))
     observation=next(e for e in record['events'] if e['event']=='INFER' and e['kind']=='dense')
-    # Goal error is zero here because stationary reobservation precedes turning.
+    # 旋回前の停止中なので、方位誤差は0。
     error=0.;model=AvoidanceModel().models['dense'];left_index=list(model.classes_).index(1)
     distances=np.array(observation['sensors'])
     baseline=float(model.predict_proba([features(distances,error,DENSE_DEG)])[0,left_index])

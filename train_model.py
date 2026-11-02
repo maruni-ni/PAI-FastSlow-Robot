@@ -19,13 +19,13 @@ def train():
         if family==0:
             boxes.append((5,-rng.uniform(1.25,1.9),5.5,rng.uniform(.12,.25)))
         elif family==1:
-            # A slim obstruction within a 15/30 degree beam, between coarse rays.
+            # 粗いセンサの間に入る細い障害物。
             boxes.append((cx-rng.uniform(.7,1.1),-rng.uniform(.55,.85),rng.uniform(.12,.23),rng.uniform(.10,.18)))
         else:
             boxes += [(rng.uniform(2.7,5.5),rng.uniform(-2,2),rng.uniform(.15,.6),rng.uniform(.15,.5))]
         pose=(cx-hx-.43-rng.uniform(1.0,1.3),rng.uniform(-.06,.06),rng.uniform(-.06,.06))
         error=rng.uniform(-.15,.15)
-        # Keep mirrored observations in the same group, avoiding mirror leakage.
+        # 元配置と左右反転を同じグループにまとめる。
         for sign in [1,-1]:
             mirrored=[(x,sign*y,w,h) for x,y,w,h in boxes]
             actual_pose=(pose[0],sign*pose[1],sign*pose[2]);e=sign*error
